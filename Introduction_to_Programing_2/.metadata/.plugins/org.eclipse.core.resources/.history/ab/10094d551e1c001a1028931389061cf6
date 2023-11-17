@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Assignment 3</title>
+		
+		<style>
+			th	{
+				width: 100px;
+				text_align: left;
+			}
+			
+			td	{
+				width: 300px;
+			}
+			
+			form	{
+				background-color: white;
+				width: 500px;
+			}
+			body	{
+				background-color: orange;
+			}
+			
+			h1, a	{
+				color: white;
+			}
+		</style>
+	</head>
+
+	<body>
+	
+		<H1>TAX SALARY</H1>
+		
+		<form action=as4forum.php method="POST">
+		
+			<table>
+				
+				<tr>
+				<th>First name</th>
+				<td><input type="text" name="f_name" placeholder="Your first name" required="required"> </td>
+				</tr>
+				
+				<tr>
+				<th>Last name</th>
+				<td><input type="text" name="l_name" placeholder="Your last name" required="required"> </td>
+				</tr>
+				
+				<tr>
+				<th>Job</th>
+				<td><input type="text" name="job" placeholder="Your job" required="required"> </td>
+				</tr>
+				
+				<tr>
+				<th>Gross salary</th>
+				<td><input type="number" name="g_salary" placeholder="Your salary" required="required"> </td>
+				</tr>
+				
+				<tr>
+				<th>Tax rate</th>
+				<td><input type="number" name="tax_rate" placeholder="Tax rate" required="required"> </td>
+				</tr>
+				
+				<tr>
+				<td></td>
+				<td><input type="submit" name="sub" value="Submit"></td>
+				</tr>
+				
+			</table>
+		
+		</form>
+		<a href="..">Back</a>
+	</body>
+</html>

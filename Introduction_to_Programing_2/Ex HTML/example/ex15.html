@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html> <head> <meta charset="UTF-8"> <title>Uutiset</title> </head> <body>
+<header>
+<h1>Uutisikkuna</h1>
+</header> <nav>
+<a href="http://www.sumi.fi/sumifi/sumi/" target="blank">Sumi</a>|
+ <a href="http://www.puv.fi" target="blank">VAMK</a> |
+<a href="http://vaasa.fi" target="blank">Vaasa</a> |
+</nav>
+ <main> 
+ <article>
+ <h1>Näin istumatyöntekijä liikkuu </h1>
+<p> <mark>Korkealle säädettävä työpöytä oli paras työkaluni ikinä.</mark> Susitusten mukaan joka päivä pitäisi liikkua noin 10 000 askeleen verran. Monilla istumatyötä tekevillä askelmäärä jää silti alle puoleen siitä. Nettikeskustelijat jakoivat parhaat vinkkinsä, joilla istumatyöntekijäkin saa lisää askelia päiväänsä.
+ </p>
+ </article>
+<aside>
+<h4>Liikunta</h4>
+<p>Liikkumine vi lla mnenlasta. Tärkenitä n että tekee jtakin, jka nstaa sykettä
+ja saa hikilemaan.</p>
+</aside> <hr/>
+
+<datalist id="sports">
+<option value="Hockey">
+<option value="Ski">
+<option value="Football">
+<option value="Volleyball">
+<option value="Tennis">
+</datalist>
+<br/>
+
+
+<form oninput="sum.value=parseInt(x.value)+parseInt(y.value)" action="register.php" method="post" autocomplete="on"> 
+-10<input type="range" id="x" min="-10" max="10" value="5">10 + 
+<input type="number" id="y" min="0" max="30" value="15">= 
+<output name="sum" for="x y"> </output> 
+
+
+
+<table>
+<tr><td>First name:</td><td><input type="text" name="first_name"></td></tr>
+<tr><td>Last name: </td><td><input type="text" name="last_name"></td></tr>
+<tr><td>Your favorite sport:</td><td> <input name="sport" list="sports"></td></tr>
+<tr><td>E-mail: </td><td><input type="email" name="email" autocomplete="ff" autofocus="autofocus"></td></tr>
+<tr><td></td><td style="text-align:left"><input type="submit" name="Register" value="Register"></td></tr>
+</table>
+</form>
+<hr>
+
+<form action="register.php" method="post" novalidate>
+E-mail: <input type="email" name="user_email">
+<input type="submit">
+</form>
+<hr/>
+<h3>form attribute</h3>
+<form action="register.php" id="reg_form" method="post">
+First name: <input type="text" name="fname"><br>
+<input type="submit" value="Submit">
+</form>
+Last name: <input type="text" name="lname" form="reg_form">
+
+<hr/>
+
+<form action="register.php">
+<table> 
+<tr><td>First name:</td><td> <input type="text" name="fname"></td></tr>
+<tr><td>Last name:</td><td><input type="text" name="lname"></td></tr>
+<tr><td></td><td><input type="submit" value="Submit"></td><td>
+<input type="submit" formaction="feedback.php" value="Feedback"></td></tr>
+ </table>
+</form>
+<hr>
+</main>
+  <footer>
+<p>Last updated <time datetime="2014-06-05T22:00+03:00">22:00</time> every morning.</p>
+<details>
+<summary>&copy; Ghodrat Moghadampour</summary>
+<p>All Rights Reserved.</p>
+<p>All examples and source codes belong to this course. </p>
+</details>
+</footer>
+ </body>
+</html>

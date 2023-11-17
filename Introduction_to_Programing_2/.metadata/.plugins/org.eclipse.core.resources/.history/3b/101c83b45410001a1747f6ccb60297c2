@@ -1,0 +1,42 @@
+ <!--This is register.php file -->
+ <!DOCTYPE html>
+ <head>
+ <title>
+Registration Summary</title>
+ </head>
+ <body>
+ <h2>
+Registration Summary</h2>
+ <table border="1">
+ <tr>
+<th>
+Name</th>
+<th>
+Last name</th>
+ <th>
+Email</th>
+ <th>
+Jobs</th>
+ <th>
+Employment Status</th>
+   </tr>
+ <tr>
+<td>
+<?php echo $_GET["first_name"] ?>
+</td>
+<td>
+<?php  echo $_GET["last_name"] ?>
+</td>
+<td>
+<?php  echo $_GET["email"] ?>
+ <td>
+<?php $jobs=$_GET["jobs"]; foreach($jobs as $j) echo $j . ' '; ?>
+</td>
+ <td>
+<?php $emps=$_GET["empstate"]; echo $emps; ?>
+</td>
+ </tr>
+ </table>
+ <a href="index.html">Back</a>
+ </body>
+ </html>

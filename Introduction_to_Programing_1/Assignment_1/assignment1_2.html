@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>The velocity needed to be in time</title>
+	</head>
+	
+	<body>
+		<h1>The velocity needed</h1>
+		
+		<p id="result"></p>
+		
+			<script>
+				var minutes, distance, velocity;
+				minutes = Number(prompt("How many minutes is to the beginning of the lesson?"));
+				distance = Number(prompt("What is the distance in kilometres?"));
+				velocity = distance / ( minutes / 60 );
+				document.getElementById("result").innerHTML =("The velocity needed " + velocity + "km/h");
+			</script>
+	</body>
+</html>	

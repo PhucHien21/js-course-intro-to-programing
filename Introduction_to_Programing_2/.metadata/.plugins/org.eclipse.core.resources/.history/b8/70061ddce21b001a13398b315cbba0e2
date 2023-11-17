@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<script type="../jQuery-3.4.1.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.slim.js"
+  integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
+  crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function(){
+  $("#hideb").click(function(){
+    $("p").hide();
+    $(".ptable").show();
+  });
+ 
+  $("#showb").click(function(){
+                                 $("p").show();
+                                 $(".ptable").hide();
+                               });
+                              
+ 
+});
+</script>
+</head>
+ 
+<body>
+<h2>jQuery Examples</h2>
+<p>jQuery is a JavaScript library.</p>
+<p>It is fun to use jQuery!</p>
+<button id="hideb">Hide Text</button>
+<button id="showb">Show Tex</button>
+<hr>
+<table class="ptable">
+<tr><th>Product</th><th>Price</th></tr>
+<tr><td>Milk</td><td>0.99</td></tr>
+<tr><td>Bread</td><td>3.48</td></tr>
+ 
+</table>
+ 
+</body>
+</html>

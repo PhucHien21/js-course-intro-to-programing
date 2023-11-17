@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Program</title>
+	</head>
+
+	<body>
+		<h1>Program</h1>
+		
+		<p id="id"></p>
+		
+		<script>
+			var v, t, r, s, total;
+			v = Number(prompt("What is the velocity?"));
+			t = Number(prompt("What is the reaction time from the user?"));
+			r = ( v * t ) / 3.6;
+			s = ( v ** 2 ) / 233; 
+			total = r + s;
+			document.getElementById("id").innerHTML = "The velocity is " + v + "km/h<br>The reaction time is " + t + "s<br>The reaction distance is " + r.toFixed(2) + "km<br>The stopping distance is " + s.toFixed(2) + "km<br>The total distance is " + total.toFixed(2) + "km";
+		</script>
+	</body>
+</html>

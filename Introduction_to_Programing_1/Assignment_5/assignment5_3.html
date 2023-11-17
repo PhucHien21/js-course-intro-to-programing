@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Assignment 5_3</title>
+		<style>
+			table, th, td {
+				border: 2px solid black;	}
+			td, th	{
+				padding-right: 20px;
+				padding-left: 20px;		}
+			th	{
+				background-color: orange;	}
+		</style>
+	</head>
+	
+	<body>
+		<h1>Calculate rectangles' area</h1>
+		Widths? <input type="text" id="id1" onkeypress="if (event.keyCode == 13) width1()">
+		<br>
+		Heights? <input type="text" id="id2" onkeypress="if (event.keyCode == 13) height1()">
+		<br>
+		<button onclick="calculate()">Calculate</button>
+		<p id="id3"></p>
+		<p id="id4"></p>
+		<p id="tables"></p>
+		
+		<script>
+			"use strict"
+			
+			var w = [];
+			var	h = [];
+			var area = [];
+			var wcount = 0;
+			var hcount = 0;
+			var areacount = 0;
+			function width1()	{
+				w[wcount] = Number(document.getElementById("id1").value);
+				wcount++;
+				document.getElementById("id3").innerHTML = "Widths: " + w;
+				}
+			function height1()	{
+				h[hcount] = Number(document.getElementById("id2").value);
+				hcount++;
+				document.getElementById("id4").innerHTML = "Heights: " + h;
+				}
+			function calculate()	{
+				var tab = "<table><tr><th></th><th>Widths</th><th>Heights</th><th>Areas</th></tr>";
+				if (wcount<hcount) {alert("You forget some widths!"); return;}
+				if (wcount>hcount) {alert("You forget some heights!"); return;}
+				for (let i=0; i<wcount; i++)	{
+					area[i] = h[i] * w[i];
+					tab = tab + "<tr><th>"+i+"</th><td>"+w[i]+"</td><td>"+h[i]+"</td><td>"+area[i]+"</td><tr>";}
+				tab = tab + "</table>";
+				document.getElementById("tables").innerHTML = tab;
+				}
+		</script>
+	</body>
+</html>

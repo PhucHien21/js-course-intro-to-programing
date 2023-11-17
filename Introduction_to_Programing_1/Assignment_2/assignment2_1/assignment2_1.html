@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Assingment2_1</title>
+	</head>
+	
+	<body>
+		<h1>The bank deposit growth</h1>
+		
+		Initial deposit <input type="text" id="S">
+		<br>Annual interest rate <input type="text" id="p">
+		<br>Years <input type="text" id="n">
+		<br><input type="button" value="Calculate" onclick="Growth()">
+		
+		<p id="result"></p>
+		
+		<p id="message"></p>
+		
+		<img id="picture" width="300"></img>
+		
+		<script>
+			"use strict"
+			
+			function Growth() {
+				var S, p, n, x;
+				S = Number(document.getElementById("S").value);
+				p = Number(document.getElementById("p").value);
+				n = Number(document.getElementById("n").value);
+				x = S * (1 + (p/100) ) ** n;
+				document.getElementById("result").innerHTML = "The bank deposit growth is " + x.toFixed(2);
+				if (x <1000) {document.getElementById("message").innerHTML = "You should save more money";
+				document.getElementById("picture").src = "poor.jpg";
+				}
+				else {document.getElementById("message").innerHTML = "You are rich right now";
+				document.getElementById("picture").src = "rich.jpg";
+				}
+			}
+		</script>
+	</body>
+</html>

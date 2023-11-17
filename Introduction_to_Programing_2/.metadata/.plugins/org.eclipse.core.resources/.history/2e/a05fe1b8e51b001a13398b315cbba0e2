@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script   src="https://code.jquery.com/jquery-3.3.1.js"  
+ integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="  
+ crossorigin="anonymous">
+ </script>
+<script> 
+$(document).ready(function(){                        
+                             $("#h2_1").click(function(){
+                                 $(this).hide(3000);
+                               });
+  $("#form1_div").dblclick(function(){
+   // $(this).css("background-color","#ffffff");
+    $(this).hide(2000);
+  }); 
+//When show button is clicked the table will be hidden or shown.
+  $("#showb").click(function(){
+            $("#h2_1").show(3000);
+           });
+                              
+  $("#hideb").click(function(){
+      $("#h2_1").hide(3000);
+    });
+});
+</script>
+</head>
+<body>
+<h2 id="h2_1">jQuery Examples</h2>
+<p id="p1">jQuery is a JavaScript library.</p>
+<p id="p2">It is fun to use jQuery!</p>
+<button id="hideb">Hide Text</button>
+<button id="showb">Show Tex</button>
+<hr>
+<table class="ptable" id="table1">
+<tr><th>Product</th><th>Price</th></tr>
+<tr><td>Milk</td><td>0.99</td></tr>
+<tr id="tr3"><td>Bread</td><td>3.48</td></tr>
+ 
+</table>
+ 
+<div id="form1_div">
+<h3 id="h3_1">Other Aspects</h3>
+<form id="form1" action="feedback.php" method="post" >
+<table>
+<tr><td>Fist name:</td><td><input type="text" name="fname" id="fntxt"/></td></tr>
+<tr><td>Last name:</td><td><input type="text" name="lname" id="lntxt"/></td></tr>
+ 
+</table>
+</form>
+  </div>
+</body>
+</html>

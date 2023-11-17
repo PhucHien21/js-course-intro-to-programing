@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Assignment 5</title>
+        <style>
+            body {
+                background-color: orange;
+            }
+
+            h1, p  {
+                color: white;
+            }
+            th {
+                width: 1200px;
+                height: 900px;
+            }
+            td {
+                text-align: center;
+                padding-left: 50px;
+            }
+        </style>
+        <script src="as5.js"></script>
+    </head>
+
+    <body>
+        <h1>Assignment 5 - Canvas</h1>
+        <table>
+            <tr>
+                <th>
+                <canvas id="drawing_area" width="1200" height="900" style= "background-color: white;"></canvas>
+                <img id="pic1" src="pic1.jpg" style="display: none;">
+                <img id="pic2" src="pic2.jpg" style="display: none;">
+                <img id="pic3" src="pic3.jpg" style="display: none;">
+                <img id="pic4" src="pic4.jpg" style="display: none;">
+                <img id="pic5" src="pic5.jpg" style="display: none;">
+                </th>
+
+                <td>
+                    <button onclick="line()" style="width: 200px; height: 30px; background-color: white;">LINE</button><br>
+                    <button onclick="circle()" style="width: 200px; height: 30px; background-color: white;">CIRCLE</button><br>
+                    <button onclick="linear()" style="width: 200px; height: 30px; background-color: white;">LINEAR GRADIENT</button><br>
+                    <button onclick="radial()" style="width: 200px; height: 30px; background-color: white;">RADIAL GRADIENT</button><br>
+                    <button onclick="image()" style="width: 200px; height: 30px; background-color: white;">IMAGES</button><br>
+                    <button onclick="clear()" style="width: 200px; height: 30px; background-color: white;">CLEAR</button><br>
+                    <p><button onclick="playMusic()" style="background: none; border: transparent;">
+                            <img src="https://banner2.cleanpng.com/20180320/uye/kisspng-computer-icons-youtube-play-button-clip-art-icon-png-play-button-5ab11133a8e875.4496411215215537156919.jpg"
+                            style="width: 40px; height: 30px;">
+                        </button> &copy; Gaming music</p>
+                </td>
+            </tr>
+        </table>
+        <br>
+        
+        
+        <audio id="music" autoplay>
+                <source src="music.mp3" type="audio/mpeg">
+        </audio>
+        <p>Highlight U22 Vietnam vs U22 Indonesia | SEA Games 30</p><br>
+        <button onclick="playPause()">Play/Pause</button>
+
+        <button onclick="makeBigger()">Big</button>
+      
+        <button onclick="makeSmaller()">Small</button>
+      
+        <button onclick="makeNormal()">Normal</button><br>
+
+        <video id="highlight" width="320px" height="240px" autoplay controls>
+            <source src="highlight.mp4" type="video/mp4">
+        </video>
+
+    </body>
+</html>

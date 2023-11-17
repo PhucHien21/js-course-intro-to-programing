@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Assignment6_2</title>
+	</head>
+	
+	<body>
+		<h1>Products</h1>
+		<select id="id1" onchange="list()"></select>
+		<p id="id2"></p>
+		<h2>Search pirce</h2>
+		Minimun price: <input type="text" id="id3">
+		Maximum price: <input type="text" id="id4">
+		<br>
+		<button onclick="search()">Search</button>
+		<p id="id5"></p>
+	    <script>
+			"use strict"
+			
+            var product=[{name:"Apple iPhone 11 64GB", price:"829", quantity:"44"}, 
+						{name:"Apple iPhone 7 32GB", price:"449", quantity:"68"}, 
+						{name:"Apple iPhone 6s 32GB", price:"289", quantity:"33"}, 
+						{name:"Doro 5517", price:"69", quantity:"72"}, 
+						{name:"Huawei P Smart 2019", price:"199", quantity:"43"}, 
+						{name:"Huawei Honor 8X", price:"160", quantity:"46"}, 
+						{name:"LG K11", price:"179", quantity:"57"}, 
+						{name:"LG V30S ThinQ", price:"499", quantity:"55"}, 
+						{name:"Samsung Galaxy A10", price:"96", quantity:"67"}, 
+						{name:"Samsung Galaxy S10e", price:"467", quantity:"25"}, 
+						{name:"Samsung Galaxy Note 10 Plus 512GB", price:"1007", quantity:"27"}, 
+						{name:"Sony Xperia 5", price:"644", quantity:"42"}]
+            function init() {
+                var options="";
+                for (let i=0; i < product.length; i++)  {
+                    options=options + "<option>" + product[i].name + "</option>";
+                }
+                document.getElementById("id1").innerHTML = options;
+            }
+            window.onload = init;
+            function list() {
+                var number = document.getElementById("id1").selectedIndex;
+                document.getElementById("id2").innerHTML = product[number].name + ", price: " + product[number].price + "€, quantity: " + product[number].quantity + ", inventory value: " + (product[number].price*product[number].quantity) + "€";
+            }
+            function search() {
+                var min = Number(document.getElementById("id3").value);
+                var max = Number(document.getElementById("id4").value);
+                var output = "";
+                if (max<69 || min>1007) {
+                    alert("We don't have any phone in that prices");
+                    return;
+                }
+                for (let k=0; k < product.length; k++) {
+                    if ((product[k].price>min) && (product[k].price<max))   {
+                        output = output + product[k].name + ", price: " + product[k].price + "€<br>"; 
+                    }
+                }
+                if (output == "") {
+                    alert("We don't have any phone in that prices");
+                    return;
+                }
+                document.getElementById("id5").innerHTML = output;
+            }
+        </script>
+	</body>
+</html>

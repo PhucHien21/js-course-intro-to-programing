@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+ <meta charset="UTF-8">
+ <title>Registration Form</title>
+ <style>
+ th, td {      padding: 5px;     text-align: left; } 
+ </style>
+ </head>
+ <body>
+ <h3>Registration Form With Get Request</h3>
+ <form action="scripts/register.php" method="get" autocomplete="on">
+ <table>
+ <tr>
+<th>First name</th>
+<td>
+<input type="text" name="first_name" required="required">
+</td>
+</tr>
+ <tr>
+<th>
+Last name</th>
+<td>
+<input type="text" name="last_name" required="required">
+</td>
+</tr>
+ <tr>
+<th>
+E-mail</th>
+<td>
+<input type="email" name="email" autocomplete="off" autofocus="autofocus" required="required">
+</td>
+</tr>
+ <tr>
+<th>Job Options</th>
+ <td colspan="3">
+<input type="checkbox" checked name="jobs[]" value="permanent" required="required">
+Permanent <input type="checkbox" name="jobs[]" value="partial">
+Partial <input type="checkbox" name="jobs[]" value="freelance">
+Freelance </td>
+ </tr>
+ <tr>
+ <th>
+Employment Status</th>
+ <td colspan="3">
+ <input type="radio" checked name="empstate" value="employed">
+Employed <input type="radio"  name="empstate" value="training">
+Training <input type="radio"  name="empstate" value="unemployed">
+Unemployed </tr>
+ <tr>
+<td rowspan="2">
+<input type="submit" name="Register" value="Register">
+</td>
+</Tr>
+    </table>
+    </form>
+    </body>
+  </html>

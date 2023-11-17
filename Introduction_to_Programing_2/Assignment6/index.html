@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Assignment 6</title>
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+        <style>
+            body {
+                background-color: orange;
+            }
+
+            h1, p  {
+                color: white;
+            }
+            th {
+                width: 150px;
+            }
+            td {
+                text-align: center;
+                padding-left: 50px;
+                width: 400px;
+            }
+            #d1{
+                background-color: white;
+                width: 650px;
+            }
+            h2  {
+                color: orange;
+            }
+        </style>
+        <script>
+
+            $(document).ready(function()   { 
+                var k=1;
+                $("#next").click(function(){ 
+                    $("#part" + k).hide();
+                    $("#part"+(k+1)).show();
+                    $("#back").show();
+                    k = k + 1;
+                    if(k == 7)  { 
+                        $("#next").hide();
+                    }});
+                    
+                   
+                $("#back").click(function() {
+                    $("#part" + k).hide();
+                    $("#part"+(k-1)).show();
+                    $("#next").show();
+                    k = k - 1;
+                    if(k == 1)  { 
+                        $("#back").hide();
+                    }});
+
+                $("#fi").click(function(){
+                    $("#fipart" + k).show();
+                    $("#part" + k).hide();
+                    $("#finext").show();
+                    $("#fiback").show();
+                    $("#next").hide();
+                    $("#back").hide();
+                    if(k == 7)  { 
+                        $("#finext").hide();
+                    }
+                    if(k == 1)  { 
+                        $("#fiback").hide();
+                    }
+                });
+
+                $("#en").click(function(){
+                    $("#part" + k).show();
+                    $("#fipart" + k).hide();
+                    $("#next").show();
+                    $("#back").show();
+                    $("#finext").hide();
+                    $("#fiback").hide();
+                    if(k == 7)  { 
+                        $("#next").hide();
+                    }
+                    if(k == 1)  { 
+                        $("#back").hide();
+                    }
+                });
+
+                $("#finext").click(function(){ 
+                    $("#fipart" + k).hide();
+                    $("#fipart"+(k+1)).show();
+                    $("#fiback").show();
+                    k = k + 1;
+                    if(k == 7)  { 
+                        $("#finext").hide();
+                    }});
+                    
+                   
+                $("#fiback").click(function() {
+                    $("#fipart" + k).hide();
+                    $("#fipart"+(k-1)).show();
+                    $("#finext").show();
+                    k = k - 1;
+                    if(k == 1)  { 
+                        $("#fiback").hide();
+                    }});
+            })
+               
+                
+            
+        </script>
+    </head>
+
+    <body>
+
+        <h1>Life in Vaasa, Finland</h1>
+
+        <button id="en" style="width: 40px; height: 20px; background-color: white;">EN</button>
+        <button id="fi" style="width: 40px; height: 20px; background-color: white;">FI</button>
+
+        <div id="d1">
+            <form id="part1" method="POST">
+                    <h2>Information</h2>
+
+                    <table>
+                        
+                        <tr>
+                        <th>Name</th> <td><input type="text" name="name" placeholder="Your name" required="required"> </td>
+                        </tr>
+                        
+                        <tr>
+                        <th>Birthday</th> <td><input type="date" name="birthday" required="required"> </td>
+                        </tr>
+                               
+                        <tr>
+                        <th>Jobs</th> <td><input type="text" name="job" required="required"> </td>
+                        </tr>
+
+                        <tr>
+                        <th>Marital Status</th> <td><input type="radio" name="marital">Married <input type="radio" name="marital">Single <input type="radio" name="marital">Engaged <input type="radio" name="marital">Divorced </td>
+                        </tr>
+                                
+                        <tr>
+                        <th>Email</th> <td><input type="email" name="mail" placeholder="abc@xyz.com"></td>
+                        </tr>
+                                
+                        <tr>
+                        <th>Phone Number</th> <td><input type="number" name="phone" placeholder="0465933833" required="required"></td>
+                        </tr>
+                                
+                        <tr>
+                        <th>Home Address</th> <td><input type="text" name="address" placeholder="Your home address" required="required"></td>
+                        </tr>
+                                
+                        <tr>
+                        <th>Postal code</th> <td><input type="number" name="code" placeholder="Example:65200" required="required"></td>
+                        </tr>
+                                
+                        <tr>
+                        <th>Nationality</th> <td>
+                            <select name="country" required="required">
+                                <option value="Finland">Finland</option>
+                                <option value="Vietnam">Vietnam</option>
+                                <option value="Japan">Japan</option>
+                                <option value="USA">USA</option>
+                                <option value="England">England</option>
+                                <option value="Other">Other</option>
+                            </select> </td>
+                        </tr>
+
+                    </table>
+            </form>
+
+            <form id="part2" method="POST" style="display: none;">
+                <h2>Feedback on infrastructure</h2>
+
+                <textarea rows="10" cols="50" name="infrastructure"></textarea>
+
+            </form>
+
+            <form id="part3" method="POST" style="display: none;">
+                    <h2>Feedback on accommodation</h2>
+    
+                    <textarea rows="10" cols="50" name="accommodation"></textarea>
+    
+                </form>
+
+            <form id="part4" method="POST" style="display: none;">
+                    <h2>Feedback on transportation</h2>
+    
+                    <textarea rows="10" cols="50" name="transportation"></textarea>
+    
+                </form>
+
+            <form id="part5" method="POST" style="display: none;">
+                    <h2>Feedback on education</h2>
+    
+                    <textarea rows="10" cols="50" name="education"></textarea>
+    
+                </form>
+            
+            <form id="part6" method="POST" style="display: none;">
+                <h2>Feedback on recruitment</h2>
+    
+                <textarea rows="10" cols="50" name="recruitment"></textarea>
+    
+            </form>
+                
+            <form id="part7" method="POST" style="display: none;">
+                    <h2>Feedback</h2>
+                
+                    <table>
+                        <tr>
+                            <th>Culture</th>
+                            <td><textarea rows="10" cols="30" name="culture"></textarea></td>
+                        </tr>
+
+                        <tr>
+                            <th>Sport</th>
+                            <td><textarea rows="10" cols="30" name="sport"></textarea></td>
+                        </tr>
+
+                        <tr>
+                            <th>Recreation Possibilities</th>
+                            <td><textarea rows="10" cols="30" name="possibilities"></textarea></td>
+                        </tr>
+                    </table>
+                    
+        
+                </form>
+
+        
+
+        <form id="fipart1" method="POST" style="display: none;">
+                <h2>Tiedot</h2>
+
+                <table>
+                    
+                    <tr>
+                    <th>Nimi</th> <td><input type="text" name="name"  required="required"> </td>
+                    </tr>
+                    
+                    <tr>
+                    <th>Syntymäpäivä</th> <td><input type="date" name="birthday" required="required"> </td>
+                    </tr>
+                    
+                    <tr>
+                    <th>Työpaikkaa</th> <td><input type="text" name="job"  required="required"> </td>
+                    </tr>
+                            
+                    <tr>
+                    <th>Siviilisääty</th> <td><input type="radio" name="marital">Naimisissa <input type="radio" name="marital">Yksittäinen <input type="radio" name="marital">Kihloissa <input type="radio" name="marital">Eronnut </td>
+                    </tr>
+                            
+                    <tr>
+                    <th>Email</th> <td><input type="email" name="mail" required="required"></td>
+                    </tr>
+                            
+                    <tr>
+                    <th>Puhelinnumero</th> <td><input type="number" name="phone"  required="required"></td>
+                    </tr>
+                            
+                    <tr>
+                    <th>Kotiosoite</th> <td><input type="text" name="address"  required="required"></td>
+                    </tr>
+                            
+                    <tr>
+                    <th>postinumero</th> <td><input type="number" name="code"  required="required"></td>
+                    </tr>
+                            
+                    <tr>
+                    <th>Kansalaisuus</th> <td>
+                        <select name="country" required="required">
+                            <option value="Finland">Suomi</option>
+                            <option value="Vietnam">Vietnami</option>
+                            <option value="Japan">Japani</option>
+                            <option value="USA">Yhdysvallat</option>
+                            <option value="England">Englanti</option>
+                            <option value="Other">Toinen</option>
+                        </select> </td>
+                    </tr>
+
+                </table>
+        </form>
+
+        <form id="fipart2" method="POST" style="display: none;">
+            <h2>Palaute infrastruktuurista</h2>
+
+            <textarea rows="10" cols="50" name="infrastructure"></textarea>
+
+        </form>
+
+        <form id="fipart3" method="POST" style="display: none;">
+                <h2>Palaute majoituksesta</h2>
+
+                <textarea rows="10" cols="50" name="accommodation"></textarea>
+
+            </form>
+
+        <form id="fipart4" method="POST" style="display: none;">
+                <h2>Palaute kuljetuksista</h2>
+
+                <textarea rows="10" cols="50" name="transportation"></textarea>
+
+            </form>
+
+        <form id="fipart5" method="POST" style="display: none;">
+                <h2>Palaute koulutuksesta</h2>
+
+                <textarea rows="10" cols="50" name="education"></textarea>
+
+            </form>
+        
+        <form id="fipart6" method="POST" style="display: none;">
+            <h2>Palaute rekrytoinnista</h2>
+
+            <textarea rows="10" cols="50" name="recruitment"></textarea>
+
+        </form>
+            
+        <form id="fipart7" method="POST" style="display: none;">
+                <h2>Palaute</h2>
+            
+                <table>
+                    <tr>
+                        <th>Kulttuuri</th>
+                        <td><textarea rows="10" cols="30" name="culture"></textarea></td>
+                    </tr>
+
+                    <tr>
+                        <th>Urheilu</th>
+                        <td><textarea rows="10" cols="30" name="sport"></textarea></td>
+                    </tr>
+
+                    <tr>
+                        <th>Virkistysmahdollisuudet</th>
+                        <td><textarea rows="10" cols="30" name="possibilities"></textarea></td>
+                    </tr>
+                </table>
+                
+    
+            </form>
+
+
+        </div>
+        <br>
+        <div>
+        
+            <button id="back" style="display:none; width: 80px; height: 30px; background-color: white;">Back</button>
+            <button id="next" style="width: 80px; height: 30px; background-color: white;">Next</button>
+            <button id="fiback" style="display:none; width: 80px; height: 30px; background-color: white;">Takaisin</button>
+            <button id="finext" style=" display:none; width: 80px; height: 30px; background-color: white;">Seuraava</button>
+            
+        </div>
+    </body>
+
+</html>

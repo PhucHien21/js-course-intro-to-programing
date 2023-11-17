@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Assignment 3_3</title>
+		<style>
+			body
+				{
+					margin-left: 20px;
+				}
+			h1
+				{
+					color:orange;
+				}
+			table, th, td 
+				{
+					border: 1px solid black;
+				}
+			td, th {
+					padding-right:20px;
+					padding-left:20px;
+				}
+			th {
+					background-color: silver;
+				}
+			label {
+					width: 100px;
+					margin: 5px;
+					display: inline-block;
+				}
+		</style>
+	</head>
+	
+	<body>
+		<h1>Powers of x</h1>
+		<label>Lower limit:</label> <input type="text" id="id1">
+		<br>
+		<label>Upper limit:</label> <input type="text" id="id2">
+		<br>
+		<label>Step value:</label> <input type="text" id="id3">
+		<br>
+		<p><button onclick="calculate()">Display</button>
+		<p id="result"></p>
+		
+		<script>
+			"use strict"
+			
+			function calculate()	{
+			var x2, x3, start, stop, step;
+			var results;
+			results = "<table><tr><th>x</th><th>x<sup>2</sup></th><th>x<sup>3</sup></th></tr>";
+			start = Number(document.getElementById("id1").value);
+			stop = Number(document.getElementById("id2").value);
+			step = Number(document.getElementById("id3").value);
+			while (start <= stop) {
+				x2 = start**2; x3 = start**3;
+				results = results + "<tr><td>" + start + "</td><td>" + x2 + "</td><td>" + x3 + "</td></tr>";
+				start = start + step;
+				}
+			results = results + "</table>";
+			document.getElementById("result").innerHTML = results;
+			}
+		</script>
+	</body>	
+</html>			

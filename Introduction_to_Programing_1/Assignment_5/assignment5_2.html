@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Assignment 5_2</title>
+		<style>
+			canvas {
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+
+	<body>
+		
+		<h1>Draw triangles</h1>
+		Three points of the triangle are: 
+		<br>
+		<input type="text" id="id1"><input type="text" id="id2">
+		<br>
+		<input type="text" id="id3"><input type="text" id="id4">
+		<br>
+		<input type="text" id="id5"><input type="text" id="id6">
+		<br>
+		<button onclick="draw()">DRAW!</button>
+		<br>
+		<canvas id="myCanvas" width="500" height="300"></canvas>
+		<script>
+			var context;
+			
+			function myDrawLine(x1, y1, x2, y2, color)	{
+				context.beginPath(); 
+				context.lineWidth = 1;
+				context.strokeStyle = color;	
+				context.moveTo(x1, y1);    
+				context.lineTo(x2, y2);    
+				context.stroke();           
+			}
+
+			function init()	{
+				var canvas = document.getElementById("myCanvas");
+				context = canvas.getContext("2d");
+				var w = canvas.width;  
+				var h = canvas.height;
+				myDrawLine(0, h/2, w, h/2, "gray");
+				myDrawLine(w/2, 0, w/2, h, "gray");
+				myDrawLine(0, 0, w, h, "gray");
+				myDrawLine(w, 0, 0, h, "gray");
+			}
+			function triangle(x1, y1, x2, y2, x3, y3, color)	{
+				myDrawLine(x1, y1, x2, y2, color);
+				myDrawLine(x2, y2, x3, y3, color);
+				myDrawLine(x1, y1, x3, y3, color);
+			}
+			
+			function draw()	{
+				var canvas = document.getElementById("myCanvas");
+				context = canvas.getContext("2d");
+				var a =[];
+				for (let i=1; i<=6; i++)	{
+					a[i] = Number(document.getElementById("id"+i).value);}
+				triangle(a[1], a[2], a[3], a[4], a[5], a[6], "orange");
+			}
+window.onload = init;
+</script>
+
+</body>
+</html>

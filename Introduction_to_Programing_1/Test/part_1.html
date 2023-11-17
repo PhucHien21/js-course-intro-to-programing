@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Part 1</title>
+	</head>
+	
+	<body>
+		<h1>Lottery</h1>
+		How many lottery tickets are in this lottery? <input type="text" id="id1">
+		<br>
+		How much money this lottery deals out? <input type="text" id="id2">
+		<br>
+		<button onclick="play()">PLAY!!</button>
+		<p id="id3"></p>
+		
+		<script>
+			var tickets, money, b, c;
+			
+			function	play()	{
+				var result = "";
+				tickets = Number(document.getElementById("id1").value);
+				money = Number(document.getElementById("id2").value);
+				if (tickets <= 0 || money <= 0) {
+					alert("Tickets and money must greater than or equal to 1"); return;}
+				while (money>=1)	{
+					c = Math.floor(Math.random()*tickets)+1;
+					b = Math.floor(Math.random()*money)+1;
+					result = result + "Ticket " + c + " wins " + b + "€<br>";
+					money = money - b;
+					}
+				document.getElementById("id3").innerHTML = result + "<br>GAME OVER!";
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Assignment 5_1</title>
+	</head>
+	
+	<body>
+		<h1>The guessing game</h1>
+		Your number is? <input type="text" id="id1" onkeypress="if (event.keyCode == 13) start()"> 
+		<p id="id2"></p>
+		<script>
+			"use strict"
+			
+			var pnum, cnum, k;
+			cnum = Math.floor(Math.random()*100)+1;
+			k = 1;
+			function start()	{
+					pnum = Number(document.getElementById("id1").value);
+					if (k > 6) {document.getElementById("id2").innerHTML ="You lose the game! The correct number is " + cnum; return;}
+					if (pnum<cnum) {alert("HIGHER!"); k++;}
+					if (pnum>cnum) {alert("SMALLER!"); k++;}
+					if (pnum==cnum) {alert("YOU WIN!!"); return;}
+					}
+		</script>
+	</body>
+</html>

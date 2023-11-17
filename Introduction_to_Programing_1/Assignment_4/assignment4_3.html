@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Assignment 4_3</title>
+		<style>
+			h1	{
+				color: red;	}
+			h2	{
+				color: orange;	}
+			table, th, td {
+				border: 2px solid black;	}
+			td, th	{
+				padding-right: 20px;
+				padding-left: 20px;		}
+			th	{
+				background-color: yellow;	}
+		</style>
+	</head>
+	
+	<body>
+		<h1>Temperature of a chemical</h1>
+		Quality of the raw material: <input type="text" id="id1">
+		<button onclick="calculate()">Calculate</button>
+		<p id="id2"></p>
+		<h2 id="id3"></h2>
+		
+		<script>
+			"use strict"
+			function calculate()	{
+			var tables, x, y, a, T, min, minx, miny;
+			a = Number(document.getElementById("id1").value);
+			y=0.2; min=1000; minx=0; miny=0;
+			tables = "<table><tr><th>Temperature</th><th>x = 1</th><th>x = 2</th><th>x = 3</th><th>x = 4</th><th>x = 5</th><th>x = 6</th></tr>";
+			if (a<0 || a>5)	{alert("The quanlity of the raw material must 0<=a<=5")}
+			else {
+				while (y<=1.2)	{
+					tables = tables + "<tr><th>y = " + y.toFixed(2) + "</th>";
+					for (x=1; x<=6; x++) {
+						T = Math.abs((a*x*x*y*y)+((6-x)**2)+((1-a)*(x/y)));
+						if (T<min) {min=T;minx=x;miny=y;}
+						tables = tables + "<td>" + T.toFixed(2) + "</td>";	}
+					tables = tables +"</tr>";
+					y = y + 0.2;
+				}
+				tables = tables + "</table>";
+				document.getElementById("id2").innerHTML = tables;
+				document.getElementById("id3").innerHTML = "The lowest temperature is " + min.toFixed(2) + " when x = " + minx + " and y = " + miny;
+				}
+			}
+		</script>
+	</body>
+</html>
+		

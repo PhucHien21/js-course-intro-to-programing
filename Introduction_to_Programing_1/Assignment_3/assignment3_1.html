@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Assignment 3_1</title>
+	</head>
+
+	<body>
+
+		<h1>The sum</h1>
+
+		<button onclick="calculate()">Start</button>
+
+		<p id="id1"></p>
+
+		<script>
+
+			function calculate() {
+				var sum = 0;   
+				var num;      
+				var output = "";
+				var count = 0
+
+				num = Number(prompt("Enter a number (0 indicates the end of numbers)", "0"));
+				while(num != 0)  {
+					sum +=  num;     
+					count ++;
+					output = output + num + "<br>";
+					document.getElementById("id1").innerHTML = output;
+					num = Number(prompt("Enter a number (0 indicates the end of numbers)", "0")); 
+				}
+				output = output + "The sum is " + sum + "<br>";
+				output = output + "The count is " + count + "<br>";
+				output = output + "The average is " + (sum/count) + "<br>";
+				document.getElementById("id1").innerHTML = output;
+			}
+		</script>
+
+	</body>
+</html>

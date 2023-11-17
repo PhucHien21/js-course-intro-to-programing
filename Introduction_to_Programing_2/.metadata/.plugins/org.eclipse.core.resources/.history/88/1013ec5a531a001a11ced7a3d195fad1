@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+canvas {
+ padding: 0;
+ margin: auto;
+ display: block;
+ width: 200px;
+ hegight: 200px
+}
+</style>
+</head>
+<body>
+ <!--Here we define a radial gradient as background -->
+ <!--body style="background-image: radial-gradient(cyan 30%, transparent 20%, salmon 90%); background-repeat:no-repeat;"-->
+ <button onClick="draw_linear_gardient1()">Draw Linear Gradient</button>
+ <button onClick="draw_linear_gardient2()">Draw Linear Gradient</button>
+ <button onClick="draw_linear_gardient3()">Draw Linear Gradient</button>
+ <button onClick="draw_linear_gardient4()">Draw Linear Gradient</button>
+ <hr>
+ <canvas id="drawing_area1" style="border: 1px solid #d3d3d3;"> 
+ Your browser does not support the HTML5 canvas tag. </canvas>
+ <canvas id="drawing_area2" style="border: 1px solid #d3d3d3;"> 
+ Your browser does not support the HTML5 canvas tag. </canvas>
+ <canvas id="drawing_area3" style="border: 1px solid #d3d3d3;"> 
+ Your browser does not support the HTML5 canvas tag. </canvas>
+ <canvas id="drawing_area4" style="border: 1px solid #d3d3d3;"> 
+ Your browser does not support the HTML5 canvas tag. </canvas>
+
+<script src="scripts/actions_24.js"></script>
+ 
+</body>
+</html>

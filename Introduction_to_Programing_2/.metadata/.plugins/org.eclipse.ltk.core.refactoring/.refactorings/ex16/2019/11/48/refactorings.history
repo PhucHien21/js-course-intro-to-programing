@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;register.php&apos; to &apos;script&apos;" description="Move &apos;register.php&apos; to &apos;script&apos;" destination="script" element1="register.php" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1574776651534" updateReferences="true"/>
+</session>

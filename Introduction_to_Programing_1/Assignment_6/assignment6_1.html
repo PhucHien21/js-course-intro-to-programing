@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Assignment 6_1</title>
+	</head>
+	
+	<body>
+		<h1>Days and months</h1>
+		Day? <input type="text" id="id1">
+		Month? <input type="text" id="id2">
+		<br>
+		<button onclick="search()">Search</button>
+		<p id="id3"></p>
+		
+		<script>
+			"use strict"
+			
+			var dayNumbers = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
+				Months = [0, "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+			
+			function search()	{
+				var day, month;
+				day = Number(document.getElementById("id1").value);
+				month = Number(document.getElementById("id2").value);
+				if (day>dayNumbers[month])	{alert("INVALID DAY"); return;}
+				document.getElementById("id3").innerHTML = "It's " + day + " of " + Months[month];
+			}
+		</script>
+	</body>
+</html>
+				

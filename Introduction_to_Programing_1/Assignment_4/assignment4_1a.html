@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Assignment 4_1a</title>
+		<style>
+			h1	{
+				color:orange;
+				}
+			label {
+					width: 100px;
+					margin: 5px;
+					display: inline-block;
+				}
+		</style>
+	</head>
+	
+	<body>
+		<h1>The sum</h1>
+		<label>Start number</label> <input type="text" id="id1">
+		<br>
+		<label>Stop number</label> <input type="text" id="id2">
+		<button onclick="calculate()">Calculate</button>
+		<p id="result"></p>
+		
+		<script>
+			"use strict"
+			
+			function calculate()	{
+			var start, stop, sum, i;
+			start = Number(document.getElementById("id1").value);
+			stop = Number(document.getElementById("id2").value);
+			sum = 0; i = start;
+			while (start <= stop)	{
+				sum = sum + start;	start ++;
+				}
+			document.getElementById("result").innerHTML = "The sum of all numbers between " + i + " and " + stop + " is: " + sum;
+			}
+		</script>
+	</body>
+</html>

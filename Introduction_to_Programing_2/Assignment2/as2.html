@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Assignment 2 - Form</title>
+		
+		<style>
+			th	{
+				width: 100px;
+				text_align: left;
+			}
+			
+			td	{
+				width: 450px;
+			}
+			
+			form	{
+				background-color: white;
+				width: 700px;
+			}
+			body	{
+				background-color: orange;
+			}
+			
+			h1, a	{
+				color: white;
+			}
+		</style>
+	</head>
+
+
+	<body>
+		<h1>Public Forum</h1>
+		
+		<datalist id="degrees">
+		<option value="Bachelor">
+		<option value="Master">
+		<option value="Doctoral">
+		<option value="Other">
+		</datalist>
+		
+		<form  action="forum.php" method="get">
+		
+		<table>
+			
+			<tr>
+			<th>Name</th> <td><input type="text" name="name" placeholder="Your name" required="required"> </td>
+			<td></td>
+			</tr>
+			
+			<tr>
+			<th>Birthday</th> <td><input type="date" name="birthday" required="required"> </td>
+			<td></td>
+			</tr>
+			
+		</table>
+		
+		
+		</form>
+		
+		<form  action="forum.php" method="get" oninput="bmi.value=(w.value/(h.value*h.value)).toFixed(2)">
+		
+		<table>
+			<tr>
+			<th>Height</th> <td><input type="range" id="h" min="0.5" max="2.5" step="0.1" value="1.7" oninput="houtput.value =h.value"> <output id="houtput"></output></td>
+			<td></td>
+			</tr>
+			
+			<tr>
+			<th>Weight</th> <td><input type="range" id="w" min="10" max="300" step="0.1" value="66" oninput="woutput.value =w.value"> <output id="woutput"></output></td>
+			<td>Your BMI=<output name="bmi" for="w h"></output></td>
+			</tr>
+		
+		</table>
+		
+		</form>
+		
+		<form  action="forum.php" method="get">
+		
+		<table>
+			<tr>
+			<th>Favorite Sports</th> <td><input type="checkbox" name="sports">Ice Hockey <input type="checkbox" name="sports">Golf <input type="checkbox" name="sports">Football <input type="checkbox" name="sports">Tennis <input type="checkbox" name="sports">Volleyball</td>
+			<td></td>
+			</tr>
+			
+			<tr>
+			<th>Favorite Color</th> <td><input type="color" name="color" required="required"></td>
+			<td></td>
+			</tr>
+			
+			<tr>
+			<th>Marital Status</th> <td><input type="radio" name="marital">Married <input type="radio" name="marital">Single <input type="radio" name="marital">Engagged <input type="radio" name="marital">Divorced </td>
+			<td></td>
+			</tr>
+			
+			<tr>
+			<th>Degree</th> <td><input name="degree" list="degrees" required="required"></td>
+			<td></td>
+			</tr>
+			
+			<tr>
+			<th>Email</th> <td><input type="email" name="mail" placeholder="abc@xyz.com"></td>
+			<td></td>
+			</tr>
+			
+			<tr>
+			<th>Phone</th> <td><input type="number" name="phone" placeholder="0465933833" required="required"></td>
+			<td></td>
+			</tr>
+			
+			<tr>
+			<th>Home Address</th> <td><input type="text" name="address" placeholder="Your home address" required="required"></td>
+			<td></td>
+			</tr>
+			
+			<tr>
+			<th>Postal code</th> <td><input type="number" name="code" placeholder="Example:65200" required="required"></td>
+			<td></td>
+			</tr>
+			
+			<tr>
+			<th>Country</th> <td>
+				<select name="country" required="required">
+					<option value="Finland">Finland</option>
+					<option value="Vietnam">Vietnam</option>
+					<option value="Japan">Japan</option>
+					<option value="USA">USA</option>
+					<option value="England">England</option>
+					<option value="Other">Other</option>
+				</select> </td>
+				<td></td>
+			</tr>
+			
+			<tr>
+			<th>Comments</th>
+			<td><textarea rows="10" cols="50" name="comment" placeholder="Text here"></textarea></td>
+			<td></td>
+			</tr>
+		
+			<tr>
+			<th></th>
+			<td></td>
+			<td><input type="submit" name="sub" value="Submit"></td>
+			</tr>
+			
+		</table>
+				
+		</form>
+		
+		<a href="..">Back</a>
+	</body>
+		
+</html>

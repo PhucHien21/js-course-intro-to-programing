@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Part 2</title>
+	</head>
+	
+	<body>
+		<h1>VAMK's room</h1>
+		<button onclick="seat()">SEAT</button>
+		<br>
+		Description: <input type="text" id="id1">
+		<p id="id2"></p>
+		<br>
+		<button onclick="search()">SEARCH</button>
+		
+		<script>
+			var code = ["A1067", "A1078", "A2033", "A3008", "B1022", "B1057", "C0083"];
+			var description = ["Lecture room", "Computer classroom", "Lecture room", "Computer classroom", "Auditorium", "Auditorium", "Computer classroom",];
+			var seats =[];
+			var a, sum, result;
+			
+			function seat()	{
+				for (let i=0; i<=6; i++)	{
+					seats[i] = Number(prompt("Number of seats in " + description[i] + " " + code[i] + "?"));}
+			}
+			
+			function search()	{
+				result = "";
+				sum = 0
+				a = document.getElementById("id1").value;
+				for (let k=0; k<=6; k++)	{
+					if (a == description[k]) {
+						result = result +  code[k] + ", seats " + seats[k] + "<br>";
+						sum = sum + seats[k];	}
+				}
+				document.getElementById("id2").innerHTML = result + "TOTAL " + sum + " seats";
+			}
+		</script>
+	</body>
+</html>

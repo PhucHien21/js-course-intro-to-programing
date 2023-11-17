@@ -1,0 +1,75 @@
+	//This is the content of actions_22.js file
+	function draw_circle() {  
+	//Here we print a message 
+	 document.getElementById("info").innerHTML = "Drawing circles...";  
+	var canvas = document.getElementById("drawing_area"); 
+	var context = canvas.getContext("2d");
+	var rx=canvas.width/2, ry=canvas.height/2; 
+	var r=40;
+	
+	context.beginPath(); 
+	//arc(rx, ry, r, a0, af) 
+	//Here we draw an arc counterclockwise 
+	context.arc(rx,ry,r, -Math.PI/2,-2*Math.PI, true); 
+	context.strokeStyle="#0000FF"; 
+	context.lineWidth='20'; 
+	context.stroke();
+	
+	var r=Math.random() * (canvas.width/2);
+	//Here we draw an arc clockwise 
+	context.beginPath(); 
+	//Here we draw an arc clockwise 
+	context.arc(rx,ry,r, Math.PI/10,2*Math.PI); 
+	//context.strokeStyle="#FF0000"; 
+	//Here we call getRandomColor() to get a random color 
+	context.strokeStyle=getRandomColor(); 
+	context.lineWidth='2'; 
+	context.stroke(); 
+	}
+	
+	function draw_rectangle() {  
+	 
+	//Here we print a message 
+	document.getElementById("info").innerHTML = "Drawing recangles..."; 
+	var canvas = document.getElementById("drawing_area"); 
+	var context = canvas.getContext("2d"); 
+	//Here we draw filled rectangle 
+	//context.fillStyle = "red";
+	context.fillStyle = getRandomColor(); 
+	var x=canvas.width/3, y=canvas.height/3, w=(canvas.width-x)/2, h=(canvas.height-y)/2; 
+	context.fillRect(x, y, w, h);
+	//Here we draw non-filled rectangles
+	context.beginPath(); 
+	context.lineWidth = "2"; 
+	 //Here we call getRandomColor() function to get  
+	 //a random color  
+	 
+	 context.strokeStyle = getRandomColor(); 
+	   //Here we re-initialize variables 
+	   
+	x=Math.random() * canvas.width; 
+	y=Math.random() * canvas.height ; 
+	w=(canvas.width-x)/4; 
+	h=(canvas.height-y)/4; 
+	context.rect(x, y, w, h); 
+	context.stroke(); 
+	}
+	//This function is used to clear the canvas
+	function clear_canvas() {   
+	 
+	document.getElementById("info").innerHTML = "Clearing canvas..."; 
+	 var canvas = document.getElementById("drawing_area"); 
+	var context = canvas.getContext("2d"); 
+	 context.clearRect(0, 0, canvas.width, canvas.height); 
+	}
+	//This function is used to generate random colors
+	function getRandomColor() {  
+	var digits = '0123456789ABCDEF'; 
+	  var color = '#'; 
+	  for (var i = 0; i < 6; i++) {    
+	   color += digits[Math.floor(Math.random() * 16)]; 
+	  }   
+	  
+	  
+	  return color; 
+	}

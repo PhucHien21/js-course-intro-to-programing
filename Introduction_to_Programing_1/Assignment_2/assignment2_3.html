@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Assignment2_3</title>
+	</head>
+	
+	<body>
+		<h1>Total price of an order</h1>
+		
+		The price: <input type="text" id="id1">
+		<br>
+		The quantity: <input type="text" id="id2">
+		<br>
+		<button onclick="calculate()">Calculate</button>
+		<br>
+		<p id="id3"></p>
+		<br>
+		<p id="id4"></p>
+		<script>
+			"use strict"
+			
+			function calculate() {
+			var total, price, quantity;
+			price = Number(document.getElementById("id1").value);
+			quantity = Number(document.getElementById("id2").value);
+			total = price * quantity;
+			if (quantity>=20 && quantity<50) {
+					total = total - (total*10/100);
+					document.getElementById("id3").innerHTML = "The discount is 10%";
+					}
+			if (quantity>=50 && quantity<100) {
+					total = total - (total*20/100);
+					document.getElementById("id3").innerHTML = "The discount is 20%";
+					}
+			if (quantity>=100) {
+					total = total - (total*30/100);
+					document.getElementById("id3").innerHTML = "The discount is 30%";
+					}
+			document.getElementById("id4").innerHTML = "The total price is " + total
+			}
+		</script>
+	</body>
+</html>

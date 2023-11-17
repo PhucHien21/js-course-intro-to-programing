@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Assignment 4</title>
+		
+		<style>
+			
+			table	{
+				background-color: white;
+				width: 400px;
+			}
+			body	{
+				background-color: orange;
+			}
+			
+			h1, a	{
+				color: white;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1>Salary</h1>
+		
+		<?php 
+		$g_salary=$_POST["g_salary"];
+		$tax=$_POST["tax_rate"];
+		$tax_paid=($tax/100)*$g_salary;
+		$n_salary=$g_salary-$tax_paid;
+        $dir="../asignment4/data/";
+        $file_name="comments.txt";
+
+        if (!file_exists($dir)) {
+
+        if (!mkdir($dir, 0711, true))       
+            {         
+                echo($dir . ' cannot be created recursively' . '<br>');       
+            }     
+        else       
+            {      
+                echo($dir . ' created recursively' . '<br>');    
+            }
+        }
+        
+        ?>
+        <?php
+        $newEntry="<tr>
+        <td>" .$_POST["f_name"]."</td>
+        <td>" .$_POST["l_name"]."</td>
+        <td>" .$_POST["job"]. "</td>
+        <td>" .$n_salary. "</td>
+        <td>" .$tax_paid. "</td>
+        </tr>\r\n";
+
+        $file_path_name=$dir . $file_name;
+        
+        if(file_put_contents($file_path_name, $newEntry, FILE_APPEND ) >0)  
+        echo "Data was successfully written to " . htmlentities($file_path_name) . "<br/>";
+        else 
+        echo "Data could not be written to " . htmlentities($file_path_name) . "<br/>";
+        echo "<hr>";
+        echo "<div style='text-align:center;'>";
+        echo "<h2>Sumary Data</h2>";
+
+		echo "<table>
+ 			<tr>
+				<th>Name</th>
+				<th>Last name</th>
+				<th>Job</th>
+				<th>Net salary</th>
+				<th>Tax paid</th>
+   			</tr>";
+        echo file_get_contents($file_path_name);
+        echo"</table>";
+        echo "</div>";
+        echo "<a href='../Assignment4/index.html'>Back</a>";
+         
+        ?>
+ 	</body>
+ </html>

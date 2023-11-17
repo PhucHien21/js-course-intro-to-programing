@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+		<title>Assignment2_2</title>
+		<script>
+			"use strict"
+			
+			function formula() {
+				var a, b, c, D, x1, x2;
+				a = Number(document.getElementById("a").value);
+				b = Number(document.getElementById("b").value);
+				c = Number(document.getElementById("c").value);
+				D = b**2-4*a*c;
+				x1 = (-b + Math.sqrt(D)) / (2*a);
+				x2 = (-b - Math.sqrt(D)) / (2*a);
+				if (a == 0) {
+				document.getElementById("message").innerHTML = "a=0 is not a quadratic equation";
+				}
+				else if (D < 0) {
+				document.getElementById("message").innerHTML = "There are no real roots";
+				}
+				else {
+				document.getElementById("message").innerHTML = "x<sub>1</sub> = " + x1 + "; x<sub>2</sub> = " + x2;
+				}
+			}
+		</script>	
+	</head>
+	
+	<body>
+	
+		<h1>The quadratic equation</h1>
+		
+		Coefficient a <input type="text" id="a">
+		<br>
+		Coefficient b <input type="text" id="b">
+		<br>
+		Coefficient c <input type="text" id="c">
+		<br> 
+		<button onclick="formula()">Calculate</button>
+		<br>
+		<p id="message"></p>
+		
+	</body>
+</html>
